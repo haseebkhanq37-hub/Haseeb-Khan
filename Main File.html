@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayat Graphics</title>
+
+    <style>
+
+        /* =========================
+           BASIC SETTINGS
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f5f9;
+            color: #222;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .title {
+            width: 100%;
+            min-height: 105px;
+            padding: 10px 25px;
+
+            background: linear-gradient(
+                135deg,
+                rgb(144, 117, 169),
+                rgb(92, 61, 119)
+            );
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+            flex-wrap: wrap;
+
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* Logo */
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+
+
+        /* Website Name */
+
+        .title1 {
+            margin: 0;
+            flex: 1;
+
+            color: white;
+            text-align: center;
+
+            font-size: clamp(23px, 3vw, 35px);
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .navitem {
+            min-width: 105px;
+            height: 38px;
+
+            padding: 7px 10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background-color: blanchedalmond;
+            color: black;
+
+            text-decoration: none;
+            border-radius: 8px;
+
+            font-size: 14px;
+
+            transition: 0.3s ease;
+        }
+
+        .navitem:hover {
+            background-color: rgb(180, 129, 57);
+            color: white;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           INTRODUCTION
+        ========================= */
+
+        .paragraph {
+            max-width: 1100px;
+
+            margin: 25px auto;
+            padding: 0 20px;
+
+            text-align: center;
+
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           PRODUCTS
+        ========================= */
+
+        .main {
+            width: 100%;
+            max-width: 1450px;
+
+            margin: auto;
+            padding: 20px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(230px, 1fr));
+
+            gap: 22px;
+        }
+
+
+        /* =========================
+           PRODUCT CARD
+        ========================= */
+
+        .borders {
+            width: 100%;
+            min-height: 430px;
+
+            background-color: white;
+
+            border: 1px solid #ded8e3;
+            border-radius: 14px;
+
+            overflow: hidden;
+
+            display: flex;
+            flex-direction: column;
+
+            box-shadow:
+                0 4px 12px rgba(0, 0, 0, 0.08);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+        .borders:hover {
+            transform: translateY(-7px);
+
+            border-color: rgb(144, 117, 169);
+
+            box-shadow:
+                0 10px 25px rgba(70, 45, 90, 0.18);
+        }
+
+
+        /* =========================
+           PRODUCT IMAGE
+        ========================= */
+
+        .image {
+            width: 100%;
+            height: 230px;
+
+            object-fit: cover;
+            display: block;
+        }
+
+
+        /* =========================
+           PRODUCT HEADING
+        ========================= */
+
+        .heading {
+            margin: 14px 8px 8px;
+
+            color: brown;
+
+            text-align: center;
+
+            font-size: 21px;
+        }
+
+
+        /* =========================
+           PRODUCT DESCRIPTION
+        ========================= */
+
+        .des {
+            padding: 0 12px;
+
+            font-family:
+                'Times New Roman',
+                Times,
+                serif;
+
+            font-size: 16px;
+
+            line-height: 1.5;
+
+            text-align: center;
+        }
+
+
+        /* =========================
+           BUTTON AREA
+        ========================= */
+
+        .cen {
+            margin-top: auto;
+
+            padding: 18px 10px;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        /* =========================
+           BUY BUTTON
+        ========================= */
+
+        .Buy {
+            width: 115px;
+            height: 40px;
+
+            border: none;
+            border-radius: 8px;
+
+            background-color: rgb(104, 71, 131);
+
+            color: white;
+
+            font-size: 15px;
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.3s ease;
+        }
+
+        .Buy:hover {
+            background-color: rgb(144, 117, 169);
+
+            transform: scale(1.06);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .foot {
+            width: 100%;
+            min-height: 90px;
+
+            padding: 15px 10px;
+
+            background-color: rgb(104, 71, 131);
+
+            color: white;
+
+            text-align: center;
+
+            line-height: 1.8;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .title {
+                justify-content: center;
+            }
+
+            .title1 {
+                flex: 1 1 50%;
+            }
+
+            .nav {
+                width: 100%;
+            }
+
+            .main {
+                gap: 16px;
+                padding: 16px;
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .title {
+                flex-direction: column;
+
+                padding: 18px 12px;
+
+                gap: 12px;
+            }
+
+            .logo {
+                width: 75px;
+                height: 75px;
+            }
+
+            .title1 {
+                font-size: 24px;
+            }
+
+            .nav {
+                width: 100%;
+                gap: 6px;
+            }
+
+            .navitem {
+                min-width: 0;
+
+                flex: 1 1 40%;
+
+                height: 38px;
+
+                font-size: 13px;
+            }
+
+            .paragraph {
+                margin: 20px auto;
+
+                padding: 0 15px;
+
+                font-size: 15px;
+            }
+
+            .main {
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+
+                gap: 12px;
+
+                padding: 12px;
+            }
+
+            .borders {
+                min-height: 0;
+
+                border-radius: 10px;
+            }
+
+            .image {
+                height: 150px;
+            }
+
+            .heading {
+                margin: 10px 5px 7px;
+
+                font-size: 17px;
+            }
+
+            .des {
+                padding: 0 8px;
+
+                font-size: 14px;
+
+                line-height: 1.4;
+            }
+
+            .cen {
+                padding: 12px 5px;
+            }
+
+            .Buy {
+                width: 100px;
+                height: 36px;
+
+                font-size: 14px;
+            }
+
+            .foot {
+                padding: 15px 8px;
+
+                font-size: 12px;
+            }
+        }
+
+
+        /* =========================
+           VERY SMALL MOBILE
+        ========================= */
+
+        @media (max-width: 360px) {
+
+            .main {
+                grid-template-columns: 1fr;
+
+                padding: 15px;
+            }
+
+            .image {
+                height: 220px;
+            }
+
+            .heading {
+                font-size: 20px;
+            }
+
+            .des {
+                font-size: 15px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <div class="title">
+
+        <img src="Ayat Graphics.png" class="logo">
+
+        <h1 class="title1">
+            Ayat Graphics & Printing Shop
+        </h1>
+
+        <div class="nav">
+
+            <a href="#" class="navitem">Home</a>
+
+            <a href="#" class="navitem">About Us!</a>
+
+            <a href="#" class="navitem">Contact Us!</a>
+
+            <a href="services.html" class="navitem">
+                More Services
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- INTRODUCTION -->
+
+    <p class="paragraph">
+        <b>
+            Ayat Graphics — Creativity That Makes Your Brand Stand Out.
+            We provide professional graphic designing, printing, and customized design services with quality you can trust.
+            From idea to final design, we bring your vision to life.
+        </b>
+    </p>
+
+
+    <!-- PRODUCTS -->
+
+    <div class="main">
+
+
+        <!-- COLOR MUG -->
+
+        <div class="borders">
+
+            <img src="Color Mug.jpg" class="image">
+
+            <h2 class="heading">
+                Color Mug
+            </h2>
+
+            <p class="des">
+                Custom mug printing with high-quality designs, photos, and personalized text.
+                Perfect for gifts, events, and special occasions.
+            </p>
+
+            <div class="cen">
+
+                <a href="https://wa.me/923120342962?text=Assalam%20o%20Alaikum%2C%20I%20want%20to%20buy%20this%20product."
+                   target="_blank">
+
+                    <button class="Buy">
+                        Buy Now
+                    </button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- WHITE MUG -->
+
+        <div class="borders">
+
+            <img src="White Mug.jpg" class="image">
+
+            <h2 class="heading">
+                White Mug
+            </h2>
+
+            <p class="des">
+                Premium white mug printing with your custom photos, names, and designs.
+                Perfect for gifts, personal use, and special occasions.
+            </p>
+
+            <div class="cen">
+
+                <a href="https://wa.me/923120342962?text=Assalam%20o%20Alaikum%2C%20I%20want%20to%20buy%20this%20product."
+                   target="_blank">
+
+                    <button class="Buy">
+                        Buy Now
+                    </button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- MAGIC MUG -->
+
+        <div class="borders">
+
+            <img src="Magic Mug.jpg" class="image">
+
+            <h2 class="heading">
+                Magic Mug
+            </h2>
+
+            <p class="des">
+                Custom magic mug printing with your photos, names, and designs.
+                Perfect for gifts, personal use, and special occasions.
+            </p>
+
+            <div class="cen">
+
+                <a href="https://wa.me/923120342962?text=Assalam%20o%20Alaikum%2C%20I%20want%20to%20buy%20this%20product."
+                   target="_blank">
+
+                    <button class="Buy">
+                        Buy Now
+                    </button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- WOOD MUG -->
+
+        <div class="borders">
+
+            <img src="Wood.jpg" class="image">
+
+            <h2 class="heading">
+                Wood Mug
+            </h2>
+
+            <p class="des">
+                Custom wooden mug printing with names, logos, and unique designs.
+                Perfect for gifts, businesses, and special occasions.
+            </p>
+
+            <div class="cen">
+
+                <a href="https://wa.me/923120342962?text=Assalam%20o%20Alaikum%2C%20I%20want%20to%20buy%20this%20product."
+                   target="_blank">
+
+                    <button class="Buy">
+                        Buy Now
+                    </button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- SHOPPING BAG -->
+
+        <div class="borders">
+
+            <img src="Bag Printing.jpg" class="image">
+
+            <h2 class="heading">
+                Shopping Bag
+            </h2>
+
+            <p class="des">
+                Custom shopping bag printing with your logo, brand name, and designs.
+                Perfect for businesses, events, and promotional purposes.
+            </p>
+
+            <div class="cen">
+
+                <a href="https://wa.me/923120342962?text=Assalam%20o%20Alaikum%2C%20I%20want%20to%20buy%20this%20product."
+                   target="_blank">
+
+                    <button class="Buy">
+                        Buy Now
+                    </button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- SCHOOL BAG -->
+
+        <div class="borders">
+
+            <img src="Bag.jpg" class="image">
+
+            <h2 class="heading">
+                School Bag
+            </h2>
+
+            <p class="des">
+                Custom school bag printing with names, logos, and attractive designs.
+                Perfect for students, schools, and special occasions.
+            </p>
+
+            <div class="cen">
+
+                <a href="https://wa.me/923120342962?text=Assalam%20o%20Alaikum%2C%20I%20want%20to%20buy%20this%20product."
+                   target="_blank">
+
+                    <button class="Buy">
+                        Buy Now
+                    </button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- BADGE -->
+
+        <div class="borders">
+
+            <img src="Badge.jpg" class="image">
+
+            <h2 class="heading">
+                Badge Print
+            </h2>
+
+            <p class="des">
+                Custom badge printing with names, logos, and attractive designs.
+                Perfect for schools, events, organizations, and special occasions.
+            </p>
+
+            <div class="cen">
+
+                <a href="https://wa.me/923120342962?text=Assalam%20o%20Alaikum%2C%20I%20want%20to%20buy%20this%20product."
+                   target="_blank">
+
+                    <button class="Buy">
+                        Buy Now
+                    </button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOX PRINT -->
+
+        <div class="borders">
+
+            <img src="Box Printing.jpg" class="image">
+
+            <h2 class="heading">
+                Box Print
+            </h2>
+
+            <p class="des">
+                Custom box printing with your logo, brand name, and unique attractive designs.
+                Perfect for packaging, gifts, businesses, and promotional purposes.
+            </p>
+
+            <div class="cen">
+
+                <a href="https://wa.me/923120342962?text=Assalam%20o%20Alaikum%2C%20I%20want%20to%20buy%20this%20product."
+                   target="_blank">
+
+                    <button class="Buy">
+                        Buy Now
+                    </button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- TRANSPARENT STICKER -->
+
+        <div class="borders">
+
+            <img src="Transparent Sticker.jpg" class="image">
+
+            <h2 class="heading">
+                Transparent Sticker
+            </h2>
+
+            <p class="des">
+                Custom transparent stickers with your logo, brand name, and designs.
+                Perfect for packaging, branding, bottles, windows, and promotions.
+            </p>
+
+            <div class="cen">
+
+                <a href="https://wa.me/923120342962?text=Assalam%20o%20Alaikum%2C%20I%20want%20to%20buy%20this%20product."
+                   target="_blank">
+
+                    <button class="Buy">
+                        Buy Now
+                    </button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- BILL BOOK -->
+
+        <div class="borders">
+
+            <img src="Bill Book.jpg" class="image">
+
+            <h2 class="heading">
+                Bill Book Print
+            </h2>
+
+            <p class="des">
+                Custom bill book printing with your business name, logo, and details.
+                Perfect for shops, offices, businesses, and professional use.
+            </p>
+
+            <div class="cen">
+
+                <a href="https://wa.me/923120342962?text=Assalam%20o%20Alaikum%2C%20I%20want%20to%20buy%20this%20product."
+                   target="_blank">
+
+                    <button class="Buy">
+                        Buy Now
+                    </button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- CAP -->
+
+        <div class="borders">
+
+            <img src="Cap Printing.jpg" class="image">
+
+            <h2 class="heading">
+                Cap Print
+            </h2>
+
+            <p class="des">
+                Custom cap printing with your logo, name, and unique attractive designs.
+                Perfect for businesses, events, teams, and promotional purposes.
+            </p>
+
+            <div class="cen">
+
+                <a href="https://wa.me/923120342962?text=Assalam%20o%20Alaikum%2C%20I%20want%20to%20buy%20this%20product."
+                   target="_blank">
+
+                    <button class="Buy">
+                        Buy Now
+                    </button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- CURTAIN -->
+
+        <div class="borders">
+
+            <img src="Curtain.jpeg" class="image">
+
+            <h2 class="heading">
+                Curtain Print
+            </h2>
+
+            <p class="des">
+                Custom curtain printing with beautiful photos, patterns, and unique designs.
+                Perfect for homes, offices, events, and special occasions.
+            </p>
+
+            <div class="cen">
+
+                <a href="https://wa.me/923120342962?text=Assalam%20o%20Alaikum%2C%20I%20want%20to%20buy%20this%20product."
+                   target="_blank">
+
+                    <button class="Buy">
+                        Buy Now
+                    </button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO FRAME -->
+
+        <div class="borders">
+
+            <img src="Photo Frame.jpg" class="image">
+
+            <h2 class="heading">
+                Photo Frame
+            </h2>
+
+            <p class="des">
+                Custom photo frame printing with your favorite photos and unique designs.
+                Perfect for home décor, gifts, and special occasions.
+            </p>
+
+            <div class="cen">
+
+                <a href="https://wa.me/923120342962?text=Assalam%20o%20Alaikum%2C%20I%20want%20to%20buy%20this%20product."
+                   target="_blank">
+
+                    <button class="Buy">
+                        Buy Now
+                    </button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PEN -->
+
+        <div class="borders">
+
+            <img src="Pen.jpg" class="image">
+
+            <h2 class="heading">
+                Pen Print
+            </h2>
+
+            <p class="des">
+                Custom pen printing with your name, logo, and attractive designs.
+                Perfect for businesses, schools, events, and promotional purposes.
+            </p>
+
+            <div class="cen">
+
+                <a href="https://wa.me/923120342962?text=Assalam%20o%20Alaikum%2C%20I%20want%20to%20buy%20this%20product."
+                   target="_blank">
+
+                    <button class="Buy">
+                        Buy Now
+                    </button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ENVELOPE -->
+
+        <div class="borders">
+
+            <img src="Envelope Printing.jpg" class="image">
+
+            <h2 class="heading">
+                Envelope Printing
+            </h2>
+
+            <p class="des">
+                Custom envelope printing with your logo, name, and professional designs.
+                Perfect for offices, businesses, invitations, and official use.
+            </p>
+
+            <div class="cen">
+
+                <a href="https://wa.me/923120342962?text=Assalam%20o%20Alaikum%2C%20I%20want%20to%20buy%20this%20product."
+                   target="_blank">
+
+                    <button class="Buy">
+                        Buy Now
+                    </button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- SHIELD -->
+
+        <div class="borders">
+
+            <img src="Shield.jpg" class="image">
+
+            <h2 class="heading">
+                Shields Printing
+            </h2>
+
+            <p class="des">
+                Custom shield printing with your name, logo, and attractive designs.
+                Perfect for awards, schools, sports events, and special occasions.
+            </p>
+
+            <div class="cen">
+
+                <a href="https://wa.me/923120342962?text=Assalam%20o%20Alaikum%2C%20I%20want%20to%20buy%20this%20product."
+                   target="_blank">
+
+                    <button class="Buy">
+                        Buy Now
+                    </button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- SHINE VISITING CARD -->
+
+        <div class="borders">
+
+            <img src="Shine Visiting Card.jpg" class="image">
+
+            <h2 class="heading">
+                Shine VC
+            </h2>
+
+            <p class="des">
+                Premium shine visiting cards with attractive designs and a glossy finish.
+                Perfect for businesses, professionals, brands, and personal use.
+            </p>
+
+            <div class="cen">
+
+                <a href="https://wa.me/923120342962?text=Assalam%20o%20Alaikum%2C%20I%20want%20to%20buy%20this%20product."
+                   target="_blank">
+
+                    <button class="Buy">
+                        Buy Now
+                    </button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- UV VISITING CARD -->
+
+        <div class="borders">
+
+            <img src="UV Card.jpg" class="image">
+
+            <h2 class="heading">
+                UV Visiting Card
+            </h2>
+
+            <p class="des">
+                Premium UV visiting cards with your logo, name, and attractive designs.
+                Perfect for businesses, professionals, brands, and personal use.
+            </p>
+
+            <div class="cen">
+
+                <a href="https://wa.me/923120342962?text=Assalam%20o%20Alaikum%2C%20I%20want%20to%20buy%20this%20product."
+                   target="_blank">
+
+                    <button class="Buy">
+                        Buy Now
+                    </button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PILLOW -->
+
+        <div class="borders">
+
+            <img src="Pillow Printing.jpg" class="image">
+
+            <h2 class="heading">
+                Pillow Print
+            </h2>
+
+            <p class="des">
+                Custom pillow printing with your photos, names, and attractive designs.
+                Perfect for gifts, home décor, events, and special occasions.
+            </p>
+
+            <div class="cen">
+
+                <a href="https://wa.me/923120342962?text=Assalam%20o%20Alaikum%2C%20I%20want%20to%20buy%20this%20product."
+                   target="_blank">
+
+                    <button class="Buy">
+                        Buy Now
+                    </button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- WATCH -->
+
+        <div class="borders">
+
+            <img src="Watch.jpg" class="image">
+
+            <h2 class="heading">
+                Watch Print
+            </h2>
+
+            <p class="des">
+                Custom watch printing with your name, logo, and attractive designs.
+                Perfect for gifts, businesses, events, and special occasions.
+            </p>
+
+            <div class="cen">
+
+                <a href="https://wa.me/923120342962?text=Assalam%20o%20Alaikum%2C%20I%20want%20to%20buy%20this%20product."
+                   target="_blank">
+
+                    <button class="Buy">
+                        Buy Now
+                    </button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <div class="foot">
+
+        For Contact: 0312-0342962 <br>
+
+        Shop Address: Shop No#05 Madina Market Barrage Road Sukkur. <br>
+
+        © 2026 Ayat Graphics. All Rights Reserved.
+
+    </div>
+
+</body>
+
+</html>
